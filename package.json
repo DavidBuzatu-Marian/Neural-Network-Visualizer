@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --mode development ./neural_networks_visualizer/frontend/src/index.js --output ./neural_networks_visualizer/frontend/static/main.js",
+    "dev": "webpack --mode development --watch ./neural_networks_visualizer/frontend/src/index.js --output ./neural_networks_visualizer/frontend/static/main.js",
     "build": "webpack --mode production ./neural_networks_visualizer/frontend/src/index.js --output ./neural_networks_visualizer/frontend/static/main.js"
   },
   "devDependencies": {
@@ -17,8 +17,13 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   }
 }
