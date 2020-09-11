@@ -1,1 +1,1 @@
-const GET_PLOT = 'GET_PLOT';
+export const GET_PLOT = 'GET_PLOT';

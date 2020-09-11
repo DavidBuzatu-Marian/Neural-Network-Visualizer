@@ -1,7 +1,7 @@
 import { GET_PLOT } from '../actions/types';
 
 const initialState = {
-  plot: {},
+  plot: null,
 };
 
 export default (state = initialState, action) => {

@@ -1,12 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, lazy, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
+import './App.scss';
+
+import { renderLoader } from './components/utils/RenderLoader';
+
+const Landing = lazy(() => import('./components/layout/Landing'));
 
 const App = () => {
   return (
     <Provider store={store}>
       <Fragment>
-        <h1>Hello, React</h1>
+        <Suspense fallback={renderLoader()}>
+          <Landing />
+        </Suspense>
       </Fragment>
     </Provider>
   );

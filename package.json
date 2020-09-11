@@ -13,6 +13,8 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^4.3.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
@@ -24,6 +26,8 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2"
   }
 }

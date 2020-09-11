@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from .helpers import return_graph
 
-# Create your views here.
+
+def get_plot(request):
+    return HttpResponse(return_graph())
