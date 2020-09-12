@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { getPlot } from '../../actions/plot';
 
@@ -7,17 +8,37 @@ const Landing = ({ plot, getPlot }) => {
     getPlot();
   }, []);
 
+  const [plotState, setPlotState] = useState({
+    element: null,
+  });
+
+  const { element } = plotState;
+
   useEffect(() => {
     if (plot) {
-      let re = /<script>(.*?)<\/script>/g;
-      let res = re.exec('<script>test</script>');
-      console.log(res);
+      setPlotState({
+        ...plotState,
+        element: new DOMParser().parseFromString(plot, 'text/html'),
+      });
     }
   }, [plot]);
+
+  useEffect(() => {
+    if (element) {
+      document
+        .getElementsByTagName('head')[0]
+        .appendChild(element.body.childNodes[2]);
+    }
+  }, [element]);
+
   return (
     <Fragment>
       Hello
-      {plot !== null && <div className='test-plot'></div>}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: element !== null && element.body.childNodes[0].innetHTML,
+        }}
+      ></div>
     </Fragment>
   );
 };

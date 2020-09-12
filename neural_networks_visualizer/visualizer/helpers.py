@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 
 def return_graph():
     fig = plt.figure()
-    plt.plot([1, 2, 3, 4])
+    plt.scatter([1, 10], [5, 9])
     g = mpld3.fig_to_html(fig, no_extras=True,
-                          template_type="simple", figid="test-plot")
+                          template_type="general")
     return g

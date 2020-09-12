@@ -1,4 +1,8 @@
 module.exports = {
+  output: {
+    // chunkFilename: '[name].[chunkhash].js',
+    publicPath: '/static/',
+  },
   module: {
     rules: [
       {
